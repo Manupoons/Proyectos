@@ -1,0 +1,18 @@
+<h2>
+    Listado heroes
+  </h2>
+  <div *ngIf="! heroes.length">No hay heroes por el momento</div>
+  <div>
+    <article *ngFor="let heroe of heroes">
+      <span>ID: {{heroe.id}}</span>
+      <span>Nombre: {{heroe.nombre}}</span>
+      <span>Titulo: {{titulos[heroe.titulo].nombre}}</span>
+      <span>Nivel: {{heroe.nivel}}</span>
+      <span>Vida: {{heroe.vida}}</span>
+      <span>Velocidad {{heroe.velocidad}}</span>
+      <span>Ataque: {{heroe.ataque}}</span>
+      <span>Defensa: {{heroe.defensa}}</span>
+      <span>Imagen: <img *ngIf="heroe.imagen!=''" src="{{heroe.imagen}}" width="200px" height="200px"></span>
+      <button (click)="this.masStat(heroe)">Nivel +</button>
+    </article>
+  </div>
