@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="display-5">
+        Listado heroes
+      </h2>
+      <div *ngIf="! heroes.length">No hay heroes por el momento</div>
+      <div>
+        <article *ngFor="let heroe of heroes">
+          <span>ID: {{heroe.id}}</span>
+          <span>Nombre: {{heroe.nombre}}</span>
+          <span>Titulo: {{titulos[heroe.titulo].nombre}}</span>
+          <span>Nivel: {{heroe.nivel}}</span>
+          <span>Vida: {{heroe.vida}}</span>
+          <span>Velocidad {{heroe.velocidad}}</span>
+          <span>Ataque: {{heroe.ataque}}</span>
+          <span>Defensa: {{heroe.defensa}}</span>
+          <span>Imagen: <img *ngIf="heroe.imagen!=''" src="{{heroe.imagen}}" width="200px" height="200px"></span>
+          <button class="btn btn-success" (click)="this.masStat(heroe)">Nivel +</button>
+        </article>
+      </div>
+      
+      <h2 class="display-5">
+        Listado enemigos
+      </h2>
+      <div *ngIf="! enemigos.length">No hay enemigos por el momento</div>
+      <div>
+      <article *ngFor="let enemigos of enemigos">
+        <span>ID: {{enemigos.id}}</span>
+        <span>Nombre: {{enemigos.nombre}}</span>
+        <span>Titulo: {{titulos[enemigos.titulo].nombre}}</span>
+        <span>Nivel: {{enemigos.nivel}}</span>
+        <span>Vida: {{enemigos.vida}}</span>
+        <span>Velocidad {{enemigos.velocidad}}</span>
+        <span>Ataque: {{enemigos.ataque}}</span>
+        <span>Defensa: {{enemigos.defensa}}</span>
+        <span>Imagen: <img *ngIf="enemigos.imagen!=''" src="{{enemigos.imagen}}" width="200px" height="200px"></span>
+      </article>
+      </div>
+    </div>
+  </div>
+</div>
+

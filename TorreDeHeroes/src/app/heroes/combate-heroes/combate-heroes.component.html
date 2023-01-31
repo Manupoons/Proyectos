@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="display-5">Combates</h2>
+      <div class="row">
+        <div class="col-2 mt-2">
+          <select class="form-select" [(ngModel)]="idA">
+            <option *ngFor="let heroe of heroes; let i = index" value="{{i}}">{{heroe.nombre}}</option>
+          </select>
+        </div>
+        
+        <p class="mt-3">VS</p>
+
+        <div class="col-2">
+          <select class="form-control" [(ngModel)]="idB">
+            <option *ngFor="let enemigos of enemigos; let i = index" value="{{i}}">{{enemigos.nombre}}</option>
+          </select>
+        </div>
+      </div>
+
+      <p>
+        <button class="btn btn-danger mt-3" (click)="pelea()">Fight</button>
+      </p>
+    </div>
+  </div>
+</div>
